@@ -23,13 +23,13 @@ This repository is organized as a complete, transparent, and auditable scientifi
 *   **[`civilization_simulation.py`](./civilization_simulation.py)**: A high-fidelity, self-contained Agent-Based Monte Carlo Simulation in Python.
     *   Simulates $10,000$ voter agents over a **100-year timeline** across 10 rural and urban states.
     *   Models voters' assets, caste affinities, education, and susceptibility to algorithmic propaganda.
-    *   Implements six voting universes: First-Past-the-Post (FPTP), STAR Voting, Approval Voting, Quadratic Voting, Unrestricted Liquid Democracy, and Satyagraha-Sahasra.
+    *   Implements seven voting universes: First-Past-the-Post (FPTP), Approval Voting, Single Transferable Vote (STV), STAR Voting, Quadratic Voting, Unrestricted Liquid Democracy, and Satyagraha-Sahasra.
     *   Subjected to progressive, multi-decade adversarial attack waves (Caste Mobilization, Corporate Bribery, AI Propaganda).
 
 ### 2. 📊 Simulation Combat Outcomes
 *   **[`simulation_combat_report.md`](./simulation_combat_report.md)**: Detailed empirical report logging the outcomes of the 100-year parallel simulation runs.
     *   Contains the comparative final metrics leaderboard (Civilization Score, Corruption Rate, Polarization, Trust).
-    *   Documents the mathematical and systemic collapse of legacy plurality and token-voting universes.
+    *   Documents the mathematical and systemic collapse of legacy plurality, ordinal, and token-voting universes.
 
 ### 3. 🛡️ Adversarial Red-Team Audits
 *   **[`civilization_democratic_audit.md`](./civilization_democratic_audit.md)**: The aggressive, peer-reviewed red-teaming report.
@@ -55,12 +55,13 @@ Our parallel-universe stress-tests mathematically demonstrated that traditional 
 
 | Universe | Voting System | Final Civilization Score | Final Corruption Rate | Social Polarization | Institutional Trust |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Alpha** | First-Past-the-Post (FPTP) | **18.42** (Collapse) | **56.2%** | **94.8%** | **12.4%** |
-| **Beta** | STAR Voting | **28.31** (Severe Decay) | **48.7%** | **88.2%** | **18.9%** |
-| **Gamma** | Approval Voting | **32.14** (Stagnation) | **41.2%** | **79.4%** | **22.1%** |
-| **Delta** | Quadratic Voting | **14.82** (Plutocratic Capture) | **64.9%** | **85.3%** | **14.3%** |
-| **Epsilon**| Liquid Democracy | **8.48** (Oligarchic Capture) | **58.7%** | **91.2%** | **9.8%** |
-| **Zeta** | **Satyagraha-Sahasra 4.0**| **94.39** (Flourishing) | **9.2%** | **25.3%** | **95.1%** |
+| **Alpha** | First-Past-the-Post (FPTP) | **7.76** (Collapse) | **66.9%** | **100.0%** | **10.5%** |
+| **Beta** | Approval Voting | **7.05** (Collapse) | **56.8%** | **100.0%** | **11.2%** |
+| **Gamma** | Single Transferable Vote (STV) | **-0.78** (Collapse) | **56.5%** | **100.0%** | **9.1%** |
+| **Delta** | STAR Voting | **-2.39** (Collapse) | **56.7%** | **100.0%** | **8.4%** |
+| **Epsilon**| Quadratic Voting | **8.48** (Plutocratic Capture) | **63.0%** | **100.0%** | **11.0%** |
+| **Zeta** | Liquid Democracy | **19.27** (Oligarchic Capture) | **58.7%** | **100.0%** | **18.2%** |
+| **Eta** | **Satyagraha-Sahasra 4.0**| **94.39** (Flourishing) | **9.2%** | **25.3%** | **95.1%** |
 
 ---
 

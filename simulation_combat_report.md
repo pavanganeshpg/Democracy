@@ -6,14 +6,15 @@
 ---
 
 ## 1. The Core Simulation Engine Architecture
-To rigorously challenge each democratic system, we constructed an **Agent-Based Model (ABM)** modeling a population of **10,000 active citizens** distributed across **10 synthetic states** representing diverse urban and rural contexts. The simulation ran continuously for **100 years** (20 election cycles), tracking parallel civilizational indicators across six distinct universes:
+To rigorously challenge each democratic system, we constructed an **Agent-Based Model (ABM)** modeling a population of **10,000 active citizens** distributed across **10 synthetic states** representing diverse urban and rural contexts. The simulation ran continuously for **100 years** (20 election cycles), tracking parallel civilizational indicators across seven distinct universes:
 
 *   **Universe Alpha**: First-Past-the-Post (FPTP)
 *   **Universe Beta**: Approval Voting
-*   **Universe Gamma**: STAR Voting (Score Then Automatic Runoff)
-*   **Universe Delta**: Quadratic Voting (Credits spent quadratically)
-*   **Universe Epsilon**: Liquid Democracy (Dynamic proxy delegation)
-*   **Universe Zeta**: Satyagraha-Sahasra (Epistemic Filter + Liquid Assembly + Sortition Veto)
+*   **Universe Gamma**: Single Transferable Vote (STV)
+*   **Universe Delta**: STAR Voting (Score Then Automatic Runoff)
+*   **Universe Epsilon**: Quadratic Voting (Credits spent quadratically)
+*   **Universe Zeta**: Liquid Democracy (Dynamic proxy delegation)
+*   **Universe Eta**: Satyagraha-Sahasra (Epistemic Filter + Liquid Assembly + Sortition Veto)
 
 ### The Adversarial Attack Timeline
 Every universe was subjected to three distinct, state-sponsored or emergent strategic attacks:
@@ -38,7 +39,8 @@ Below is the computational leaderboard at the **100-year mark** after surviving 
 | **3** | **Quadratic Voting** | **8.48** | **35.6%** | **63.0%** | **100.0%** |
 | **4** | **First-Past-the-Post** | **7.76** | **35.6%** | **66.9%** | **100.0%** |
 | **5** | **Approval Voting** | **7.05** | **35.0%** | **56.8%** | **100.0%** |
-| **6** | **STAR Voting** | **-2.39** | **35.0%** | **56.7%** | **100.0%** |
+| **6** | **Single Transferable Vote (STV)** | **-0.78** | **35.0%** | **56.5%** | **100.0%** |
+| **7** | **STAR Voting** | **-2.39** | **35.0%** | **56.7%** | **100.0%** |
 
 ---
 
@@ -83,10 +85,12 @@ Civilization Score Trajectory
 *   **Adversarial Breakdown**: During the *Tribal Mobilization* wave (Years 20-40), political parties abandoned all policy platforms. They ran algorithms to match candidate caste to local block sizes. Demagogues with 0% competence but high local caste alignment won consistently.
 *   **Final State**: Total institutional trust collapse (7.76/100). The society split into warring ideological factions.
 
-### 2. STAR & Approval Voting (Universes Beta & Gamma)
-*   **The Trap**: The "Compromise Paradox" under high misinformation.
-*   **Adversarial Breakdown**: While STAR successfully selected moderate, high-competence candidates during the baseline years, it collapsed under *AI Propaganda* (Years 40-70). Coordinated deepfake campaigns shifted the median voter's perception of reformist candidates, making them appear "extremist" or "untrustworthy." Consequently, voters gave reformers 0 scores, and the automatic runoff consistently elevated low-competence but charismatic populists who maintained broad, bland approval.
-*   **Final State**: Worst-performing system under targeted propaganda (STAR Score: -2.39).
+### 2. STAR, Approval, & Single Transferable Vote (Universes Beta, Gamma, & Delta)
+*   **The Trap**: Preference decay and polarization sweeps.
+*   **Adversarial Breakdown**: 
+    *   **Approval & STAR**: While STAR successfully selected moderate, high-competence candidates during the baseline years, it collapsed under *AI Propaganda* (Years 40-70). Coordinated deepfake campaigns shifted the median voter's perception of reformist candidates, making them appear "extremist" or "untrustworthy." Consequently, polarized voters gave reformers 0 scores, and the automatic runoff consistently elevated low-competence but charismatic populists who maintained broad, bland approval. STAR scored the lowest under deep propaganda (-2.39).
+    *   **Single Transferable Vote (STV)**: STV showed high early resilience, preventing direct demagogic victory by transferring votes to centrist/moderate secondary preferences. However, during the intense late-stage *AI Propaganda* and polarization waves, voters ranked candidates strictly along sectarian lines. Center-seeking compromise candidates were eliminated in early rounds due to low first-preference counts. Final transfers thus coalesced entirely around extreme populist factions, leading to civilizational collapse (STV Score: -0.78).
+*   **Final State**: Worst-performing category under modern targeted propaganda.
 
 ### 3. Liquid Democracy (Universe Epsilon)
 *   **The Trap**: The "Super-Delegate Swarm."

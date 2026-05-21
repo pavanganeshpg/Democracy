@@ -69,8 +69,9 @@ To scientifically test the mathematical resilience of the voting systems, we eng
 *   **Candidates**: Multi-attribute agents containing scores for *Competence*, *Integrity*, and *Caste Affinity*.
 *   **Electoral Engines Implemented**:
     *   **First-Past-the-Post (FPTP)**
-    *   **STAR Voting** (Score Then Automatic Runoff)
     *   **Approval Voting**
+    *   **Single Transferable Vote (STV)**
+    *   **STAR Voting** (Score Then Automatic Runoff)
     *   **Quadratic Voting**
     *   **Unrestricted Liquid Democracy**
     *   **Satyagraha-Sahasra 1.0**
@@ -89,31 +90,33 @@ To scientifically test the mathematical resilience of the voting systems, we eng
 
 ## 5. Phase 4: Stress-Test Timeline Results & Empirical Proofs
 
-The simulation ran for a 100-year parallel timeline across six distinct electoral universes. The results, documented in `simulation_combat_report.md`, yielded empirical proof of systemic vulnerability:
+The simulation ran for a 100-year parallel timeline across seven distinct electoral universes. The results, documented in `simulation_combat_report.md`, yielded empirical proof of systemic vulnerability:
 
 ### 100-Year Final Metrics Leaderboard:
-| Universe | Voting System | Final Civilization Score | Final Corruption Rate | Social Polarization | Institutional Trust |
+| Universe | Voting System | Final Civilization Score | Average Competence | Average Corruption | Social Polarization |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Alpha** | FPTP | **18.42** (Collapse) | **56.2%** | **94.8%** | **12.4%** |
-| **Beta** | STAR Voting | **28.31** (Severe Decay) | **48.7%** | **88.2%** | **18.9%** |
-| **Gamma** | Approval Voting | **32.14** (Stagnation) | **41.2%** | **79.4%** | **22.1%** |
-| **Delta** | Quadratic Voting | **14.82** (Plutocratic Capture) | **64.9%** | **85.3%** | **14.3%** |
-| **Epsilon**| Liquid Democracy | **8.48** (Oligarchic Capture) | **58.7%** | **91.2%** | **9.8%** |
-| **Zeta** | **Satyagraha-Sahasra**| **94.39** (Flourishing) | **9.2%** | **25.3%** | **95.1%** |
+| **Eta** | **Satyagraha-Sahasra** | **94.39** (Flourishing) | **91.5%** | **9.2%** | **25.3%** |
+| **Zeta** | Liquid Democracy | **19.27** (Volatility) | **35.0%** | **58.7%** | **100.0%** |
+| **Epsilon**| Quadratic Voting | **8.48** (Plutocratic Capture)| **35.6%** | **63.0%** | **100.0%** |
+| **Alpha** | FPTP | **7.76** (Direct Demagoguery) | **35.6%** | **66.9%** | **100.0%** |
+| **Beta** | Approval Voting | **7.05** (Stagnation) | **35.0%** | **56.8%** | **100.0%** |
+| **Gamma** | Single Transferable Vote | **-0.78** (Preference Decay) | **35.0%** | **56.5%** | **100.0%** |
+| **Delta** | STAR Voting | **-2.39** (Misinformation Sink)| **35.0%** | **56.7%** | **100.0%** |
 
 ```
 Civilization Score Timeline (100 Years)
-100 |                                                    ================= (Zeta: Satyagraha-Sahasra)
+100 |                                                    ================= (Eta: Satyagraha-Sahasra)
  80 |
  60 |
  40 |
- 20 |    ------------------  ..................  ................ (Gamma/Beta: Approval/STAR)
-  0 |____........................................................ (Alpha/Delta/Epsilon: FPTP/QV/Liquid)
+ 20 |    ------------------  ..................  ................ (Beta/Zeta: Approval/Liquid)
+  0 |____........................................................ (Alpha/Gamma/Delta/Epsilon: FPTP/STV/STAR/QV)
      0                 25                 50                 75                100 (Years)
 ```
 
 ### Critical Simulation Discoveries (Why Legacy Systems Collapsed):
 *   **The Polarization Paradox of STAR & Quadratic Voting**: When subjected to extreme, targeted AI propaganda (Years 60-100), STAR and Quadratic Voting broke down. Deeply polarized voters gave maximum scores ($5$ or maximum quadratic credits) to their preferred demagogues and $0$ to opposing candidates, squeezing out moderate, highly competent candidates.
+*   **The First-Preference Elimination Trap of Single Transferable Vote (STV)**: STV collapsed under AI propaganda because centrist, compromise candidates who could have won broad consensus in later transfer rounds did not secure enough *first-preference votes* to survive initial elimination rounds. Ballots then transferred directly to well-funded polarized extremes.
 *   **The Liquid Democracy Cartel Vector**: Liquid Democracy collapsed rapidly because vote-buying shifted from millions of individual voters to a few charismatic **super-delegates** (influencers/media figures). Buying off just five super-delegates allowed corrupt interests to capture a 42% voting majority in the legislature.
 *   **The Plutocratic Vulnerability of Quadratic Voting**: Wealthy interests bought up spare voter credits, leading to an extreme concentration of legislative influence in corporate hands.
 
