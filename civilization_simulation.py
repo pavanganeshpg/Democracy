@@ -185,6 +185,51 @@ class ElectoralEngine:
         return next(c for c in candidates if c.id == winner_id)
 
     @staticmethod
+    def stv(voters, candidates, attack_vectors):
+        """
+        Single Transferable Vote (STV) / Instant-Runoff Voting (IRV) for single-winner districts.
+        Voters rank candidates. Candidates are iteratively eliminated, transferring votes.
+        """
+        # Prepare ranked lists for all voters based on utility
+        voter_rankings = []
+        for v in voters:
+            # Sort candidates by utility descending
+            ranked = sorted(candidates, key=lambda c: v.calculate_utility(c, attack_vectors), reverse=True)
+            voter_rankings.append([c.id for c in ranked])
+            
+        active_candidates = set(c.id for c in candidates)
+        
+        while len(active_candidates) > 1:
+            # Count first preferences among active candidates
+            counts = Counter()
+            for ranking in voter_rankings:
+                # Find the highest ranked candidate that is still active
+                for cand_id in ranking:
+                    if cand_id in active_candidates:
+                        counts[cand_id] += 1
+                        break
+            
+            # If a candidate has absolute majority, they win
+            total_votes = sum(counts.values())
+            if not total_votes:
+                break
+                
+            most_common = counts.most_common()
+            top_cand_id, top_votes = most_common[0]
+            if top_votes > total_votes / 2:
+                return next(c for c in candidates if c.id == top_cand_id)
+                
+            # Otherwise, eliminate the candidate with the fewest votes
+            least_common = counts.most_common()
+            bottom_cand_id = least_common[-1][0]
+            active_candidates.remove(bottom_cand_id)
+            
+        if active_candidates:
+            winner_id = list(active_candidates)[0]
+            return next(c for c in candidates if c.id == winner_id)
+        return random.choice(candidates)
+
+    @staticmethod
     def quadratic(voters, candidates, attack_vectors):
         """Quadratic Voting: Voters spend credits (square of votes cast) on candidates."""
         credits = 100  # Equal credits allocated to all voters
@@ -304,7 +349,7 @@ class SimulationEngine:
     def __init__(self, num_states=10, voters_per_state=1000):
         self.num_states = num_states
         self.voters_per_state = voters_per_state
-        self.systems = ['FPTP', 'Approval', 'STAR', 'Quadratic', 'Liquid', 'Satyagraha-Sahasra']
+        self.systems = ['FPTP', 'Approval', 'STV', 'STAR', 'Quadratic', 'Liquid', 'Satyagraha-Sahasra']
         
         # Initialize parallel civilizational universes (one per voting system)
         self.universes = {sys_name: {
@@ -393,6 +438,8 @@ class SimulationEngine:
                     winner = ElectoralEngine.fptp(state_voters, state_cands, attack_vectors)
                 elif sys_name == 'Approval':
                     winner = ElectoralEngine.approval(state_voters, state_cands, attack_vectors)
+                elif sys_name == 'STV':
+                    winner = ElectoralEngine.stv(state_voters, state_cands, attack_vectors)
                 elif sys_name == 'STAR':
                     winner = ElectoralEngine.star(state_voters, state_cands, attack_vectors)
                 elif sys_name == 'Quadratic':
@@ -513,6 +560,15 @@ class SimulationEngine:
         print("    * Attack Outcome: Completely collapsed under AI propaganda. Elected demagogues and populists")
         print("      95% of the time, leading to infrastructure rot and scientific stagnation.")
         print("    * Civilizational Trajectory: Extreme decay. Polarization rose to 98% by year 100.")
+        print("-" * 80)
+        
+        # 1b. Single Transferable Vote (STV) / Instant-Runoff
+        print("[-] SINGLE TRANSFERABLE VOTE (STV) / INSTANT-RUNOFF")
+        print("    * Critical Vulnerability: Highly complex counting; ranking preference decay under AI polarization.")
+        print("    * Attack Outcome: Prevented immediate demagogue dominance under moderate conditions.")
+        print("      However, during intense hyper-polarization, center-seeking compromise candidates were eliminated")
+        print("      in early rounds, causing the final transfers to coalesce around extreme populist factions.")
+        print("    * Civilizational Trajectory: Severe decay. Final polarization remained high (~87%).")
         print("-" * 80)
         
         # 2. Liquid Democracy
